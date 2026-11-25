@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Seule permission demandée : accès réseau pour récupérer les événements. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Requise par MapLibre pour détecter la connectivité (permission « normale », sans donnée perso). -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Permissions ajoutées par MapLibre mais inutiles ici : l'app n'accède JAMAIS à la position
+         de l'utilisateur. On les retire explicitement du manifeste fusionné. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" tools:node="remove" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" tools:node="remove" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" tools:node="remove" />
+    <!-- Ajoutée par WorkManager pour les tâches au premier plan, que l'app n'utilise pas. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" tools:node="remove" />
+
+    <!-- Visibilité des paquets (Android 11+) limitée aux applis d'agenda et de cartographie :
+         nécessaire pour proposer la liste complète des applis compatibles. L'app ne voit rien d'autre. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.INSERT" />
+            <data android:mimeType="vnd.android.cursor.dir/event" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="text/calendar" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="geo" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".CyberAgendaApp"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="false"
+        android:enableOnBackInvokedCallback="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CyberAgenda.Starting"
+        tools:targetApi="37">
+
+        <!-- Partage des fichiers .ics générés : non exporté, accès accordé au cas par cas
+             (lecture seule, à l'application choisie) et limité au dossier cache/ics. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Seul composant exporté : le point d'entrée du lanceur. Aucun deep link.
+             taskAffinity vide : une autre app ne peut pas glisser son activité dans notre
+             tâche (détournement de tâche de type StrandHogg sur les anciennes versions d'Android). -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:taskAffinity=""
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

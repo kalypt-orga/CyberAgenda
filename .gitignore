@@ -1,0 +1,31 @@
+.gradle/
+.kotlin/
+build/
+local.properties
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+# Ne jamais versionner de clés de signature ni de secrets
+*.jks
+*.keystore
+keystore.properties
+signing/private*
+# Tout le dossier des clés, quel que soit le nom des fichiers, et les formats de clés courants
+signing/
+*.pem
+*.p12
+*.pk8
+*.der
+*.key
+.env
+*.bak
+*~
+# Sortie de l'assistant de signature d'Android Studio
+app/release/
+# Documents locaux, non publiés
+docs/AUDIT-SECURITE-*.md
+s.html
+# APK et notes de version : publiés comme pièces jointes de la release GitHub
+release/

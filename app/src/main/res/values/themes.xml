@@ -1,0 +1,15 @@
+<resources>
+    <style name="Theme.CyberAgenda" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_bg</item>
+    </style>
+
+    <!-- Écran de démarrage (API SplashScreen, rétroportée avant Android 12) : fond uni de la
+         couleur de l'app (clair ou sombre selon le système), sans logo, puis fondu. -->
+    <style name="Theme.CyberAgenda.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/window_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_blank</item>
+        <item name="postSplashScreenTheme">@style/Theme.CyberAgenda</item>
+    </style>
+
+    <color name="window_bg">#F6F4EF</color>
+</resources>

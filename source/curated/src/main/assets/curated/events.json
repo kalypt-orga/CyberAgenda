@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-23T16:00:00Z",
+  "events": [
+    {
+      "id": "ph0wn-2027",
+      "title": "Ph0wn CTF 2027",
+      "kind": "CTF",
+      "format": "ONSITE",
+      "start": "2027-03-12",
+      "end": "2027-03-13",
+      "location": "Campus SophiaTech, Sophia Antipolis, Biot (06)",
+      "url": "https://ph0wn.org/",
+      "description": "CTF dédié aux objets connectés et au matériel, accompagné d'ateliers. Thème 2027 : « Good doctors, bad patients »."
+    },
+    {
+      "id": "forum-incyber-2027",
+      "title": "Forum InCyber Europe 2027",
+      "kind": "CONFERENCE",
+      "format": "ONSITE",
+      "start": "2027-03-09",
+      "end": "2027-03-11",
+      "location": "Lille Grand Palais, Lille (59)",
+      "url": "https://forum-incyber.com/",
+      "description": "Le grand rendez-vous européen de la cybersécurité (ex-FIC) : conférences, exposants, recrutement."
+    },
+    {
+      "id": "botconf-2027",
+      "title": "Botconf 2027",
+      "kind": "CONFERENCE",
+      "format": "ONSITE",
+      "start": "2027-04-27",
+      "end": "2027-04-30",
+      "location": "Vannes (56)",
+      "url": "https://www.botconf.eu/",
+      "description": "Conférence sur la lutte contre les botnets et les logiciels malveillants. Ateliers le 27 avril, conférences du 28 au 30 avril."
+    },
+    {
+      "id": "thcon-2027",
+      "title": "THCon 2027 – Toulouse Hacking Convention",
+      "kind": "CONFERENCE",
+      "format": "ONSITE",
+      "start": "2027-04-29",
+      "end": "2027-04-30",
+      "location": "Auditorium Marthe Condat, Université Paul Sabatier, Toulouse (31)",
+      "url": "https://thcon.party/",
+      "description": "Conférences de sécurité offensive et défensive, organisées par des étudiants toulousains."
+    },
+    {
+      "id": "sstic-2027",
+      "title": "SSTIC 2027",
+      "kind": "CONFERENCE",
+      "format": "ONSITE",
+      "start": "2027-06-02",
+      "end": "2027-06-04",
+      "location": "Rennes (35)",
+      "url": "https://www.sstic.org/2027/",
+      "description": "Symposium francophone historique sur la sécurité des technologies de l'information et des communications."
+    }
+  ]
+}

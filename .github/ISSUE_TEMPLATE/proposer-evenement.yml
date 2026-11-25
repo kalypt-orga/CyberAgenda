@@ -1,0 +1,66 @@
+# Formulaire ouvert par l'application (bouton « Proposer sur GitHub ») : chaque champ est
+# pré-rempli via l'adresse de la page (paramètre = identifiant du champ). Ne pas renommer les
+# identifiants sans mettre à jour Proposal.toGitHubIssueUrl().
+name: Proposer un événement
+description: Un CTF, une conférence ou un atelier cyber en France qui manque à l'agenda.
+title: "[Proposition] "
+labels: ["proposition"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Chaque proposition est vérifiée avant d'être ajoutée à la sélection signée de CyberAgenda.
+        Cette page est **publique** : n'y mettez pas d'informations personnelles.
+  - type: input
+    id: titre
+    attributes:
+      label: Titre
+    validations:
+      required: true
+  - type: input
+    id: type
+    attributes:
+      label: Type et format
+      description: "CTF, CONFERENCE, MEETUP ou WORKSHOP · ONLINE, ONSITE ou HYBRID"
+    validations:
+      required: true
+  - type: input
+    id: quand
+    attributes:
+      label: Quand
+      description: "Date(s) et, si connues, heures (heure de Paris)"
+    validations:
+      required: true
+  - type: input
+    id: lieu
+    attributes:
+      label: Lieu et ville
+      description: Laisser vide pour un événement en ligne.
+  - type: input
+    id: lien
+    attributes:
+      label: Lien officiel (https)
+    validations:
+      required: true
+  - type: input
+    id: organisation
+    attributes:
+      label: Organisation
+  - type: input
+    id: tarif
+    attributes:
+      label: Tarif
+  - type: input
+    id: debutants
+    attributes:
+      label: Ouvert aux débutants
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+  - type: textarea
+    id: entree
+    attributes:
+      label: Entrée pour la sélection (générée par l'application)
+      description: Pour les mainteneurs, à vérifier avant de l'ajouter à events.json et de signer.
+      render: json
