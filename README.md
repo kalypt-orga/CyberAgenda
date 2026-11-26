@@ -134,7 +134,7 @@ Vous avez trouvé une faille ? Merci de la signaler de façon responsable via un
 Chaque version publie les sommes SHA-256 des fichiers. Le certificat de signature de l'application est :
 
 ```
-SHA-256 : 1d:cc:ef:03:a3:e4:67:ab:74:48:35:df:5f:1d:3c:95:c6:de:7a:a7:1a:6e:e0:fc:46:8d:33:2d:5d:3a:84:df
+SHA-256 : e9:ff:51:99:b4:21:c5:e6:64:0c:bb:65:58:b1:32:1b:f4:b2:60:52:59:b6:92:94:28:c2:76:39:bf:ad:f9:99
 ```
 
 Vérification avec les outils Android : `apksigner verify --print-certs CyberAgenda-*.apk`, ou sur le
