@@ -152,6 +152,10 @@ sont signées avec ce même certificat.
 - **Développer** : architecture, ajout d'une source, sécurité et commandes de build sont décrits
   dans [docs/DEVELOPPEMENT.md](docs/DEVELOPPEMENT.md).
 
+## Confidentialité
+
+Aucun compte, aucune publicité, aucun traceur : voir la [politique de confidentialité](PRIVACY.md).
+
 ## Licence
 
 © 2026 Kalypt — code publié sous [licence MIT](LICENSE) : réutilisation, modification et

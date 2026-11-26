@@ -45,9 +45,12 @@ android {
     }
 
     // Un APK par architecture (MapLibre embarque du code natif) + un APK universel.
+    // Le bundle du Play Store (.aab) découpe lui-même par architecture : les APK séparés ne
+    // servent qu'aux releases GitHub (assembleRelease) et sont désactivés pour bundleRelease.
+    val buildingBundle = gradle.startParameter.taskNames.any { it.contains("bundle", ignoreCase = true) }
     splits {
         abi {
-            isEnable = true
+            isEnable = !buildingBundle
             reset()
             include("arm64-v8a", "armeabi-v7a", "x86_64")
             isUniversalApk = true
