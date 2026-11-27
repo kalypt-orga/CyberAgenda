@@ -112,7 +112,8 @@ et a fait l'objet d'un audit (tests statiques et dynamiques) dont les points imp
 - une seule activité exposée aux autres applications, aucune permission sensible.
 
 Vous avez trouvé une faille ? Merci de la signaler de façon responsable via un
-[signalement privé](../../security/advisories/new) plutôt qu'une issue publique.
+[signalement privé](../../security/advisories/new) plutôt qu'une issue publique
+(voir la [politique de sécurité](SECURITY.md)).
 
 ## Installer
 
